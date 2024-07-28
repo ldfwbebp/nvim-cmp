@@ -122,7 +122,7 @@ ghost_text_view.text_gen = function(self, line, cursor_col, entry)
   local text = trim_text(word)
   local virt_lines = {}
   if #text > 0 then
-    for _, l in ipairs(vim.fn.split(text, '\n')) do
+    for _, l in ipairs(vim.fn.split(text, '\n', true)) do
       table.insert(virt_lines, { { l, type(c) == 'table' and c.hl_group or 'Comment' } })
     end
   end
